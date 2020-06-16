@@ -15,6 +15,7 @@ import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { TeacherComponent } from './teacher/teacher.component';
 import { WorkoutComponent } from './workout/workout.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { WorkoutComponent } from './workout/workout.component';
         { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
         { path: 'students', component: StudentsComponent, canActivate: [AuthorizeGuard] },
         { path: 'teachers', component: TeacherComponent, canActivate: [AuthorizeGuard] },
-    ])
+    ]),
+    NgbModule.forRoot()
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }

@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "8.0.0",
     "@angular/platform-server": "8.0.0",
     "@angular/router": "8.0.0",
+    "@ng-bootstrap/schematics": "^2.0.0-alpha.1",
     "@nguniversal/module-map-ngfactory-loader": "8.0.0-rc.1",
     "aspnet-prerendering": "^3.0.1",
     "bootstrap": "^4.3.1",
@@ -29,7 +30,8 @@
     "oidc-client": "^1.9.0",
     "popper.js": "^1.14.3",
     "rxjs": "^6.4.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "@ng-bootstrap/ng-bootstrap": "^2.0.0-alpha.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.800.6",
