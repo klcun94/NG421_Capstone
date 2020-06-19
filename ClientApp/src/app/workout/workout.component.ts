@@ -8,12 +8,12 @@ import { WorkoutsService } from '../services/workouts.service';
   styleUrls: ['./workout.component.css']
 })
 export class WorkoutComponent implements OnInit {
-  workout: Workouts = {
+    workout: Workouts = {
     date: '',
     workout: '',
-    sets: 1,
-    reps: 1,
-    weight: 1,
+    sets: undefined,
+    reps: undefined,
+    weight: undefined,
   };
   workouts: Workouts[] = [];
   constructor(private service: WorkoutsService) { }
