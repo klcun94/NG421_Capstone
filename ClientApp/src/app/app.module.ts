@@ -16,6 +16,11 @@ import { AuthorizeInterceptor } from 'src/api-authorization/authorize.intercepto
 import { TeacherComponent } from './teacher/teacher.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -33,6 +38,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     FormsModule,
     ApiAuthorizationModule,
+    MatTableModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatPaginatorModule,
     RouterModule.forRoot([
       { path: 'routines', component: WorkoutComponent, canActivate: [AuthorizeGuard] },
       { path: '', component: HomeComponent, pathMatch: 'full' },
