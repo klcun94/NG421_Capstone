@@ -1,12 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
-}
 
-code {
-  color: #e01a76;
+a {
+  color: rgb(124, 11, 11);
 }
 
 .btn-primary {
@@ -16,4 +13,14 @@ code {
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../src/images/deadlift-background-img.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.jumbotron {
+  background: rgba(138, 137, 137, 0.85);
+}

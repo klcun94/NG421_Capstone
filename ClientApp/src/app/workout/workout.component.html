@@ -2,7 +2,7 @@
 
 <p *ngIf="!workouts"><em>Loading...</em></p>
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="workouts">
+<table class='table table-condensed' aria-labelledby="tableLabel" *ngIf="workouts">
   <thead>
     <tr>
       <th>Date</th>
@@ -19,18 +19,29 @@
       <td>{{ w.sets }}</td>
       <td>{{ w.reps }}</td>
       <td>{{ w.weight }}</td>
-
     </tr>
   </tbody>
 </table>
-Date
-<input [(ngModel)]="workout.date" type="date" name="date"/>
-Workout
-<input [(ngModel)]="workout.workout" type="text" name="workout"/>
-Sets
-<input [(ngModel)]="workout.sets" type="number" name="sets"/>
-Reps
-<input [(ngModel)]="workout.reps" type="number" name="reps"/>
-Weight (lbs)
-<input [(ngModel)]="workout.weight" type="number" name="weight"/>
-<button (click)="save()">Save</button>
+<form>
+  <div class="form-group w-25">
+    <label for="date">Date</label>
+    <input [(ngModel)]="workout.date" class="form-control" type="date" name="date"/>
+  </div>
+  <div class="form-group w-25">  
+    <label for="workout">Exercise</label>
+    <input [(ngModel)]="workout.workout" class="form-control" type="text" name="workout"/>
+  </div>
+  <div class="form-group w-25">  
+    <label for="sets">Sets</label>
+    <input [(ngModel)]="workout.sets" class="form-control" type="number" name="sets"/>
+  </div>
+  <div class="form-group w-25">
+    <label for="reps">Reps</label>
+    <input [(ngModel)]="workout.reps" class="form-control" type="number" name="reps"/>
+  </div>
+  <div class="form-group w-25">
+    <label for="weight">Weight (lbs)</label>
+    <input [(ngModel)]="workout.weight" class="form-control" type="number" name="weight"/>
+  </div>  
+</form>
+<button class="btn btn-default" type="button" value="Save" (click)="save()">Save</button>

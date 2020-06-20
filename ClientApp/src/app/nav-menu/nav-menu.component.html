@@ -1,9 +1,12 @@
 <header>
   <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3"
   >
     <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">capstone</a>
+      <div>
+        <a class="navbar-brand text-light" [routerLink]="['/']">LIFT THINGS</a>
+        <i style='font-size:20px' class='fas'>&#xf44b;</i>
+      </div>
       <button
         class="navbar-toggler"
         type="button"
@@ -24,12 +27,12 @@
           <li class="nav-item"
               [routerLinkActive]="['link-active']"
               [routerLinkActiveOptions]="{ exact: true }">
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+            <a class="nav-link text-light" [routerLink]="['/']">Home</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/routines']">Routines</a>
+            <a class="nav-link text-light" [routerLink]="['/routines']"> My Routines</a>
           </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
+          <!-- <li class="nav-item" [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark" [routerLink]="['/counter']">Counter</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
@@ -40,7 +43,7 @@
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark" [routerLink]="['/teachers']">Teachers</a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
