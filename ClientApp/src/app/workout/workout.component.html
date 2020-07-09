@@ -2,46 +2,75 @@
 
 <p *ngIf="!workouts"><em>Loading...</em></p>
 
-<table class='table table-condensed' aria-labelledby="tableLabel" *ngIf="workouts">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Workout</th>
-      <th>Sets</th>
-      <th>Reps</th>
-      <th>Weight (lbs)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let w of workouts">
-      <td>{{ w.date }}</td>
-      <td>{{ w.workout }}</td>
-      <td>{{ w.sets }}</td>
-      <td>{{ w.reps }}</td>
-      <td>{{ w.weight }}</td>
-    </tr>
-  </tbody>
-</table>
-<form>
-  <div class="form-group w-25">
-    <label for="date">Date</label>
-    <input [(ngModel)]="workout.date" class="form-control" type="date" name="date"/>
+<div id="addButton" class="nav-item" [routerLinkActive]="['link-active']">
+  <a class="btn btn-dark" role="button" [routerLink]="['/addexercise']">Add Exercise</a>
+</div>
+<br>
+
+<div class="table">
+  <div class="filter">
+      <mat-form-field>
+          <mat-label class="text-light" style="font-size: 20px;">Search</mat-label>
+          <input matInput class="text-light" (keyup)="applyFilter($event)" style="font-size: 20px;" placeholder="Ex. Squat">
+      </mat-form-field>
   </div>
-  <div class="form-group w-25">  
-    <label for="workout">Exercise</label>
-    <input [(ngModel)]="workout.workout" class="form-control" type="text" name="workout"/>
+
+  <div>
+      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" width="100%" class="matTable">
+
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 20px;">Date </th>
+            <td mat-cell *matCellDef="let workout" style="font-size: 20px;">
+                {{workout.date | date: 'longDate'}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="workout">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 20px;"> Exercise </th>
+              <td mat-cell *matCellDef="let workout" style="font-size: 20px;">
+                  {{workout.workout}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="sets">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 20px;">Sets</th>
+              <td mat-cell *matCellDef="let workout" style="font-size: 20px;">
+                  {{workout.sets}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="reps">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 20px;" mat-sort-header>Reps</th>
+              <td mat-cell *matCellDef="let workout" style="font-size: 20px;"> {{workout.reps}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="weight">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 20px;" mat-sort-header>Weight (lbs)</th>
+              <td mat-cell *matCellDef="let workout" style="font-size: 20px;"> {{workout.weight}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[10, 5, 20]" showFirstLastButtons class="page text-light"></mat-paginator>
   </div>
-  <div class="form-group w-25">  
-    <label for="sets">Sets</label>
-    <input [(ngModel)]="workout.sets" class="form-control" type="number" name="sets"/>
-  </div>
-  <div class="form-group w-25">
-    <label for="reps">Reps</label>
-    <input [(ngModel)]="workout.reps" class="form-control" type="number" name="reps"/>
-  </div>
-  <div class="form-group w-25">
-    <label for="weight">Weight (lbs)</label>
-    <input [(ngModel)]="workout.weight" class="form-control" type="number" name="weight"/>
-  </div>  
-</form>
-<button class="btn btn-default" type="button" value="Save" (click)="save()">Save</button>
+</div>
+<!--<div class="container">
+  <table class='table table-condensed' aria-labelledby="tableLabel" *ngIf="workouts">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Workout</th>
+        <th>Sets</th>
+        <th>Reps</th>
+        <th>Weight (lbs)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let w of workouts">
+        <td>{{ w.date }}</td>
+        <td>{{ w.workout }}</td>
+        <td>{{ w.sets }}</td>
+        <td>{{ w.reps }}</td>
+        <td>{{ w.weight }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->

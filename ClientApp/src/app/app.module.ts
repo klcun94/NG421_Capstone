@@ -21,6 +21,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { AddWorkoutComponent } from './add-workout/add-workout.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     FetchDataComponent,
     StudentsComponent,
     TeacherComponent,
-    WorkoutComponent
+    WorkoutComponent,
+    AddWorkoutComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -45,11 +47,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatPaginatorModule,
     RouterModule.forRoot([
       { path: 'routines', component: WorkoutComponent, canActivate: [AuthorizeGuard] },
+      { path: 'addexercise', component: AddWorkoutComponent, canActivate: [AuthorizeGuard] },
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
-        { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
-        { path: 'students', component: StudentsComponent, canActivate: [AuthorizeGuard] },
-        { path: 'teachers', component: TeacherComponent, canActivate: [AuthorizeGuard] },
+      { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
+      { path: 'students', component: StudentsComponent, canActivate: [AuthorizeGuard] },
+      { path: 'teachers', component: TeacherComponent, canActivate: [AuthorizeGuard] }
     ]),
     BrowserAnimationsModule
   ],

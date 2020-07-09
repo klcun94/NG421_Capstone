@@ -1,0 +1,27 @@
+<form>
+    <div class="form-group text-light w-25">
+      <label for="date">Date</label>
+      <input [(ngModel)]="workout.date" class="form-control" type="date" name="date"/>
+    </div>
+    <div class="form-group text-light w-25">  
+      <label for="workout">Exercise</label>
+      <input [(ngModel)]="workout.workout" class="form-control" type="text" name="workout"/>
+    </div>
+    <div class="form-group text-light w-25">  
+      <label for="sets">Sets</label>
+      <input [(ngModel)]="workout.sets" class="form-control" type="number" name="sets"/>
+    </div>
+    <div class="form-group text-light w-25">
+      <label for="reps">Reps</label>
+      <input [(ngModel)]="workout.reps" class="form-control" type="number" name="reps"/>
+    </div>
+    <div class="form-group text-light w-25">
+      <label for="weight">Weight (lbs)</label>
+      <input [(ngModel)]="workout.weight" class="form-control" type="number" name="weight"/>
+    </div>  
+  </form>
+  
+  <div class="nav-item" [routerLinkActive]="['link-active']">
+    <button class="btn btn-dark" type="button" (click)="save()" [routerLink]="['/routines']">Save</button>
+    <a class="btn btn-dark" role="button" style="margin-left: 18px;" [routerLink]="['/routines']">Back</a>
+  </div>
