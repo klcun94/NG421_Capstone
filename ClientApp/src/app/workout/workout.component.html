@@ -5,7 +5,6 @@
 <div id="addButton" class="nav-item" [routerLinkActive]="['link-active']">
   <a class="btn btn-dark" role="button" [routerLink]="['/addexercise']">Add Exercise</a>
 </div>
-<br>
 
 <div class="table">
   <div class="filter">
@@ -14,7 +13,6 @@
           <input matInput class="text-light" (keyup)="applyFilter($event)" style="font-size: 20px;" placeholder="Ex. Squat">
       </mat-form-field>
   </div>
-
   <div>
       <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" width="100%" class="matTable">
 
@@ -52,25 +50,3 @@
       <mat-paginator [pageSizeOptions]="[10, 5, 20]" showFirstLastButtons class="page text-light"></mat-paginator>
   </div>
 </div>
-<!--<div class="container">
-  <table class='table table-condensed' aria-labelledby="tableLabel" *ngIf="workouts">
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Workout</th>
-        <th>Sets</th>
-        <th>Reps</th>
-        <th>Weight (lbs)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let w of workouts">
-        <td>{{ w.date }}</td>
-        <td>{{ w.workout }}</td>
-        <td>{{ w.sets }}</td>
-        <td>{{ w.reps }}</td>
-        <td>{{ w.weight }}</td>
-      </tr>
-    </tbody>
-  </table>
-</div> -->
